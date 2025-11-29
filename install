@@ -1,0 +1,22 @@
+#!/bin/sh
+
+cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r dots/newsboat ~/.config & cp -r dots/dmenu ~/.config/ & cp -r dots/nvim.sh ~/.config &
+if [ ! -d ~/Media ]; then
+    mkdir ~/Media
+fi &
+
+if [ ! -d ~/Media/Wallpapers ]; then
+    cp -r Wallpapers ~/Media
+else
+    cp -r Wallpapers/* ~/Media/Wallpapers
+fi &&
+
+sudo cp ~/.vimrc /root/
+
+cp -r Wallpapers ~/Media &
+cd suckless/dmenu &&  make -j4  && sudo make install clean &&
+cd ../dwm &&  make -j4  && sudo make install clean &&
+cd ../slock && make -j4  && sudo make install clean &&
+cd ../slstatus && make -j4  && sudo make install clean &&
+cd ../st && make -j4 &&  sudo make install clean &&
+cd ../tabbed && make -j4  && sudo make install clean
