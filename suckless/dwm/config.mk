@@ -27,7 +27,7 @@ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
 
 # flags
 CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-CFLAGS   = -g -std=c99 -pedantic -Wall -O3 ${INCS} ${CPPFLAGS}
+CFLAGS   = -std=c99 -pedantic -Wall -O3 ${INCS} ${CPPFLAGS}
 CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations ${INCS} -O3 ${CPPFLAGS}
 LDFLAGS  = ${LIBS}
 
