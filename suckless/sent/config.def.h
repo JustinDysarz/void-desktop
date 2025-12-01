@@ -19,9 +19,6 @@ static const float linespacing = 1.4;
 static const float usablewidth = 0.75;
 static const float usableheight = 0.75;
 
-/* height of the presentation progress bar */
-static const int progressheight = 5;
-
 static Mousekey mshortcuts[] = {
 	/* button         function        argument */
 	{ Button1,        advance,        {.i = +1} },
@@ -47,12 +44,10 @@ static Shortcut shortcuts[] = {
 	{ XK_Up,          advance,        {.i = -1} },
 	{ XK_Next,        advance,        {.i = +1} },
 	{ XK_Prior,       advance,        {.i = -1} },
-	{ XK_x,           toggle_cursor,  {0} },
-	{ XK_x,           toggle_cursor,  {0} },
-	{ XK_x,           toggle_cursor,  {0} },
 	{ XK_n,           advance,        {.i = +1} },
 	{ XK_p,           advance,        {.i = -1} },
 	{ XK_r,           reload,         {0} },
+	{ XK_g,           pdf,            {0} },
 };
 
 static Filter filters[] = {
@@ -60,9 +55,6 @@ static Filter filters[] = {
 	{ "\\.ff.bz2$", "bunzip2" },
 	{ "\\.[a-z0-9]+$", "2ff" },
 };
-
-static const unsigned int slide_nb_margin = 10;
-static const char *slide_nb_fnt[] = { "fixed:size=16", NULL };
 
 static const unsigned int slide_nb_margin = 10;
 static const char *slide_nb_fnt[] = { "fixed:size=16", NULL };
