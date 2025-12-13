@@ -14,7 +14,7 @@ cp -r Wallpapers ~/Media &
 
 sudo cp ~/.vimrc /root/;
 
-sudo xbps-install -S -y firefox yazi clang cmake fzf ripgrep fd bat lsd nerd-fonts nix rust zig tmux zsh vim neovim emacs-x11 xorg xorg-server libX11 libX11-devel xclip pkgconf xinit wireguard-tools mpv vlc yt-dlp freetype freetype-devel clojure xlockmore libXinerama libXinerama-devel libXft libXft-devel dhex mesa alsa-lib alsa-lib-devel alsa-firmware alsa-plugins alsa-plugins-ffmpeg ffmpeg alsa-plugins-jack alsa-plugins-pulseaudio alsa-tools alsa-tools-devel alsa-utils apulse elogind dbus-elogind dbus-elogind-libs dbus-elogind-x11 elogind-devel libelogind apulse libao-pulse libpulseaudio pavucontrol linux-firmware sof-firmware pulseaudio pulseaudio-devel pulseeffects-legacy wget curl man-db man-pages man-pages-devel man-pages-posix;
+sudo xbps-install -S -y firefox yazi clang cmake fzf ripgrep fd bat lsd nerd-fonts nix rust zig tmux zsh vim neovim emacs-x11 xorg xorg-server libX11 libX11-devel xclip pkgconf xinit wireguard-tools mpv vlc yt-dlp freetype freetype-devel clojure xlockmore libXinerama libXinerama-devel libXft libXft-devel dhex mesa alsa-lib alsa-lib-devel alsa-firmware alsa-plugins alsa-plugins-ffmpeg ffmpeg alsa-plugins-jack alsa-plugins-pulseaudio alsa-tools alsa-tools-devel alsa-utils apulse elogind dbus-elogind dbus-elogind-libs dbus-elogind-x11 elogind-devel libelogind apulse libao-pulse libpulseaudio pavucontrol linux-firmware sof-firmware pulseaudio pulseaudio-devel pulseeffects-legacy wget curl man-db man-pages man-pages-devel man-pages-posix feh maim;
 
 chsh -s /usr/bin/zsh
 
