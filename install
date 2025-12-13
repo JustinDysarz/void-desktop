@@ -1,5 +1,6 @@
 #!/bin/sh
 
+git clone https://github.com/JustinDysarz/nvim.git && cp -r nvim/nvim ~/.config && rm -rf nvim & git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/ &
 cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r dots/newsboat ~/.config & cp -r dots/dmenu ~/.config/ & cp -r dots/nvim.sh ~/.config &
 cp -r dots/doom ~/.config &
 
@@ -10,6 +11,7 @@ fi &&
     cp -r Wallpapers ~/Media || cp -r Wallpapers/* ~/Media/Wallpapers &&
 
 sudo cp ~/.vimrc /root/;
+
 
 cp -r Wallpapers ~/Media &
 cd suckless/dmenu &&  make -j4  && sudo make install clean &&
