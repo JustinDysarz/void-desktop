@@ -68,9 +68,7 @@ fi &&
 sudo ln -sf /usr/bin/clang /bin/cc & sudo ln -sf /usr/bin/clang++ /bin/c++ & sudo ln -sf /usr/bin/clang /usr/bin/cc & sudo ln -sf /usr/bin/clang++ /usr/bin/c++ &&
 
 if [ ! -d ~/.config/doom/ ]; then
-    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs || mkdir ~/.config/emacs && git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs &&
-    ~/.config/emacs/bin/doom install &&
-    rm -rf ~/.config/doom/* && cp -r dots/doom* ~/.config/doom
-fi
+    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs || mkdir ~/.config/emacs && git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+fi &
 
 cd suckless && ./update
