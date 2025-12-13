@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r dots/newsboat ~/.config & cp -r dots/dmenu ~/.config/ & cp -r dots/nvim.sh ~/.config &
+cp -r dots/doom ~/.config &
 
 if [ ! -d ~/Media ]; then
     mkdir ~/Media
