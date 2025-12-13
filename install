@@ -50,7 +50,9 @@ if [ ! -f /etc/doas.conf ]; then
     echo "permit $name as root\npermit persist keepenv $name" | sudo tee /etc/doas.conf &
 fi
 
-    sudo xbps-install -Su &&
+    sudo xbps-install -Su ||
+    printf "\n\nThis is not void.\n\nYou are on your own\n\n" && sleep 5;
+
     sudo xbps-install -y firefox yazi clang cmake fzf ripgrep fd bat lsd nerd-fonts nix rust tmux zsh vim neovim emacs-x11 xorg xorg-server libX11    \
         libX11-devel xclip pkgconf xinit wireguard-tools mpv vlc yt-dlp freetype freetype-devel clojure xlockmore libXinerama libXinerama-devel       \
         libXft libXft-devel dhex mesa alsa-lib alsa-lib-devel alsa-firmware alsa-plugins alsa-plugins-ffmpeg ffmpeg alsa-plugins-jack                 \
@@ -58,8 +60,7 @@ fi
         libelogind apulse libao-pulse libpulseaudio pavucontrol linux-firmware sof-firmware pulseaudio pulseaudio-devel pulseeffects-legacy wget curl \
         man-db man-pages man-pages-devel man-pages-posix feh maim fastfetch opendoas ghc racket qbittorrent neomutt newsboat xrandr libXrandr         \
         libXrandr-devel openvpn tcc lldb gdb ghidra wireshark libwireshark libwireshark-devel termshark wireshark-qt imv htop btop pywal              \
-        openbsd-netcat ocaml sbcl ||
-    printf "\n\nThis is not void.\n\nYou are on your own\n\n" && sleep 5;
+        openbsd-netcat ocaml sbcl;
 
 if [ ! "$SHELL" = "/usr/bin/zsh" ]; then
 chsh -s /usr/bin/zsh
@@ -68,7 +69,7 @@ fi &&
 sudo ln -sf /usr/bin/clang /bin/cc & sudo ln -sf /usr/bin/clang++ /bin/c++ & sudo ln -sf /usr/bin/clang /usr/bin/cc & sudo ln -sf /usr/bin/clang++ /usr/bin/c++ &&
 
 if [ ! -d ~/.config/doom/ ]; then
-    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs || mkdir ~/.config/emacs && git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs &
 fi &
 
 cd suckless && ./update
