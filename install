@@ -1,5 +1,25 @@
 #!/bin/sh
 
+if [ ! -d ~/Pictures ]; then
+    mkdir ~/Pictures
+fi &
+
+if [ ! -d ~/Documents ]; then
+    mkdir ~/Documents
+fi &
+
+if [ ! -d ~/Videos ]; then
+    mkdir ~/Videos
+fi &
+
+if [ ! -d ~/Projects ]; then
+    mkdir ~/Projects
+fi &
+
+if [ ! -d ~/org ]; then
+    mkdir ~/org
+fi &
+
 dist=$(uname -a | awk '{print $2}')
 name=$(whoami)
 
@@ -12,7 +32,17 @@ cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r 
 
 if [ ! -d ~/Media ]; then
     mkdir ~/Media
-fi && cp -r Wallpapers ~/Media || cp -r Wallpapers/* ~/Media/Wallpapers &&
+fi && cp -r Wallpapers ~/Media || cp -r Wallpapers/* ~/Media/Wallpapers &
+
+if [ ! -d ~/Media/ISO ]; then
+    mkdir ~/Media/ISO
+fi &
+
+if [ ! -d ~/Media/torrents ]; then
+    mkdir ~/Media/torrents
+fi &
+
+
 
 sudo cp ~/.vimrc /root/ &&
 
@@ -29,7 +59,7 @@ if [ "$dist" = "void" ]; then
         libelogind apulse libao-pulse libpulseaudio pavucontrol linux-firmware sof-firmware pulseaudio pulseaudio-devel pulseeffects-legacy wget curl \
         man-db man-pages man-pages-devel man-pages-posix feh maim fastfetch opendoas ghc racket qbittorrent neomutt newsboat xrandr libXrandr         \
         libXrandr-devel openvpn tcc lldb gdb ghidra wireshark libwireshark libwireshark-devel termshark wireshark-qt imv htop btop pywal              \
-        openbsd-netcat;
+        openbsd-netcat ocaml sbcl;
 else
     printf "\n\nThis is not void.\n\nYou are on your own\n\n" && sleep 5;
 fi
