@@ -16,13 +16,12 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_red[]         = "#780606"; //red#005577
-static const char col_blue1[]       = "#295340"; // #005577
-static const char col_blue2[]       = "#54AB84"; //#007f99
+static const char col_green1[]       = "#295340"; // #005577
+static const char col_green2[]       = "#54AB84"; //#007f99
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_red },
-	[SchemeSel]  = { col_gray4, col_blue1,  col_blue2  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_green1 },
+	[SchemeSel]  = { col_gray4, col_green1,  col_green2  },
 };
 
 /* tagging */
@@ -49,8 +48,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[@]",      spiral },    /* first entry is default */
-	{ "[M]",      monocle },
+	{ "[M]",      monocle },    /* first entry is default */
+	{ "[@]",      spiral },
 	{ "[]=",      tile },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
@@ -79,7 +78,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_green1, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *yazi[]     = { "st", "-e", "yazi", NULL };
 static const char *htop[]     = { "st", "-e", "htop", NULL };
@@ -91,7 +90,7 @@ static const char *nvim[]     = {"st", "-e", "/bin/sh", "-c", "~/.config/nvim.sh
 static const char *upvol[]    = { "/usr/bin/pactl",   "set-sink-volume", "0",      "+10%",      NULL };
 static const char *downvol[]  = { "/usr/bin/pactl",   "set-sink-volume", "0",      "-10%",      NULL };
 static const char *mutevol[]  = { "/usr/bin/pactl",   "set-sink-mute",   "0",      "toggle",   NULL };
-static const char *emacs[]     = { "emacs", NULL };
+static const char *emacs[]     = { "emacsclient", "-c", "-a", "doom", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
@@ -144,8 +143,9 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_g,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_z,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|Mod1Mask,              XK_t,      setlayout,      {.v = &layouts[5]} },
