@@ -85,11 +85,11 @@ static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *connect[]  = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
+static const char *connect[]  = { "st", "-e", "~/scripts/script.sh", NULL }; /*Portal*/
 static const char *nvim[]     = {"st", "-e", "/bin/sh", "-c", "~/scripts/nvim.sh", NULL};
-static const char *upvol[]    = { "/usr/bin/pactl",   "set-sink-volume", "0",      "+10%",      NULL };
-static const char *downvol[]  = { "/usr/bin/pactl",   "set-sink-volume", "0",      "-10%",      NULL };
-static const char *mutevol[]  = { "/usr/bin/pactl",   "set-sink-mute",   "0",      "toggle",   NULL };
+static const char *upvol[]    = { "/usr/bin/pactl",   "set-sink-volume", "@DEFAULT_SINK@",      "+10%",      NULL };
+static const char *downvol[]  = { "/usr/bin/pactl",   "set-sink-volume", "@DEFAULT_SINK@",      "-10%",      NULL };
+static const char *mutevol[]  = { "/usr/bin/pactl",   "set-sink-mute",   "@DEFAULT_SINK@",      "toggle",   NULL };
 static const char *emacs[]     = { "emacsclient", "-c", "-a", "doom", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
@@ -117,8 +117,6 @@ static const Key keys[] = {
 { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-//	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-//	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 { MODKEY,                       XK_d,      spawn,          SHCMD("~/.config/dmenu/doc.sh") },
 { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },

@@ -59,8 +59,9 @@ fi
         alsa-plugins-pulseaudio alsa-tools alsa-tools-devel alsa-utils apulse elogind dbus-elogind dbus-elogind-libs dbus-elogind-x11 elogind-devel   \
         libelogind apulse libao-pulse libpulseaudio pavucontrol linux-firmware sof-firmware pulseaudio pulseaudio-devel pulseeffects-legacy wget curl \
         man-db man-pages man-pages-devel man-pages-posix feh maim fastfetch opendoas ghc racket qbittorrent neomutt newsboat xrandr libXrandr         \
-        libXrandr-devel openvpn tcc lldb gdb ghidra wireshark libwireshark libwireshark-devel termshark wireshark-qt imv htop btop pywal              \
-        openbsd-netcat ocaml sbcl;
+        libXrandr-devel openvpn tcc lldb gdb ghidra wireshark libwireshark libwireshark-devel termshark wireshark-qt imv htop btop pywal make nmap    \
+        openbsd-netcat ocaml sbcl libjpeg-turbo libjpeg-turbo-devel libjpeg-turbo-tools exiftool keepassxc kleopatra font-awesome font-emoji-one-color\
+        font-fira-otf font-fira-ttf font-firacode font-hack-ttf font-iosevka noto-fonts-emoji;
 
 if [ ! "$SHELL" = "/usr/bin/zsh" ]; then
 chsh -s /usr/bin/zsh
