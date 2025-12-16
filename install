@@ -20,7 +20,6 @@ if [ ! -d ~/org ]; then
     mkdir ~/org
 fi &
 
-dist=$(uname -a | awk '{print $2}')
 name=$(whoami)
 
 if [ ! -d ~/.config/nvim ]; then
